@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import sample.GameMusic;
+import sample.Main;
 import sample.person.enemies.Enemies;
 
 
@@ -94,7 +95,7 @@ public class Dino extends Pane {
             animation.setOffsetX(848);
             isJump = true;
             impuls = -4.9;
-            GameMusic.jump();
+            Main.gameMusic.jump();
         }
     }
 

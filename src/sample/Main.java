@@ -31,11 +31,12 @@ public class Main extends Application {
     private final Pane root = new Pane();
     private Dino dino ;
     private ContentMaker contentMaker ;
-    private Clip clip;
+    public static GameMusic gameMusic;
     @Override
     public void start(Stage primaryStage) {
 
-        clip = GameMusic.backgroundMusic();
+        gameMusic = new GameMusic();
+        gameMusic.backgroundMusic();
 
         image = new Image( getClass().getResourceAsStream("res/100-offline-sprite.png"));
 
@@ -171,7 +172,6 @@ public class Main extends Application {
                     if(dino.update()) {
                         stopGame();
                     }
-                    if(!clip.isRunning())clip = GameMusic.backgroundMusic();
                 });
             }
         }, 0, 10);
@@ -187,7 +187,7 @@ public class Main extends Application {
         button.setTranslateX(370);
         button.setTranslateY(300);
         root.getChildren().add(button);
-        GameMusic.death();
+        gameMusic.death();
 
     }
 
